@@ -11,16 +11,11 @@ namespace SharperUniverse.Tests
         private float _updateTime;
         private EmptySystem _system;
 
-        public TestSystem(GameRunner game) : base(game)
+        public TestSystem(GameRunner game, EmptySystem emptySys) : base(game)
         {
             _prevStates = new Dictionary<TestComponent, bool>();
             ComponentRegistered += OnComponentRegistered;
             ComponentUnRegistered += OnComponentUnRegistered;
-        }
-
-        [SharperInject]
-        private void InjectSharperSystems(EmptySystem emptySys)
-        {
             _system = emptySys;
         }
 

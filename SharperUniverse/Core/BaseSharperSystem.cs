@@ -31,7 +31,7 @@ namespace SharperUniverse.Core
         public List<T> Components { get; }
 
         /// <summary>
-        /// Base constructor for any <see cref="BaseSharperSystem{T}"/>. This must be called for the system to function correctly. Do not pass <see cref="ISharperSystem{T}"/> types in an overriden constructor. Instead, use <see cref="SharperInjectAttribute"/>.
+        /// Base constructor for any <see cref="BaseSharperSystem{T}"/>. This must be called for the system to function correctly.
         /// </summary>
         /// <param name="game">The current GameRunner this system should be registered to.</param>
         protected BaseSharperSystem(GameRunner game)
@@ -40,8 +40,6 @@ namespace SharperUniverse.Core
             game.RegisterSystem(this);
             Game = game;
         }
-
-
 
         /// <summary>
         /// The logic that runs in an <see cref="ISharperSystem{T}"/> once per update cycle. The update cycle is defined by the <see cref="GameRunner"/> on instantiation.
